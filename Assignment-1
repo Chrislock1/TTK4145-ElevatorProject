@@ -1,0 +1,35 @@
+Task 3
+1)
+  Q:  What is concurrency? What is parallelism? What's the difference?
+  A:  Concurrency is when multiple computationsare executed simultaneously, and might interact with each other. 
+        A concurrent system may either run on the same core (they divide the processor time into parts and share it between them.
+        Therefore a new computation may begin before another stops.
+      Parallelism is a branch of concurrency in which the concurrent processes are didived amongst the cores in a processor. In 
+        this setting the different computastions are happening exactly simultaneously.
+        
+  Q:  What kinds of problems motivates the need for concurrent execution? (Or phrased differently: What problems do concurrency help
+        in solving?)
+  A:  There are a number of benefits with concurrent execution. Some problems might be best suited for the divide and concquer
+      -strategy. Here the need for concurrent execution is obvious. Another example is any operating system, where you want to 
+      interface with the system concurrently as the system execute subroutines and perform other executions (like playing music,
+      maintaining a video-feed, keeping track of the mouse, installing updates ect..)
+      
+  Q:  Does creating concurrent programs make the programmer's life easier? Harder? Maybe both? (Come back to this after you have
+      worked on part 4 of this exercise)
+  A:    
+  
+  Q:  What are the differences between processes, threads, green threads, and coroutines?
+  A:  - A process is a instance of a computer program, containing the programs source code. It may be made up of several threads.
+      - A thread is the smallest sequence of programmed instructions that can be managed by a scheduler. A process may consist of
+      several threads being executed concurrently or in order. 
+      - A green thread is a thread being executed in the user space, in a virtual machine. This is a way to run multithread
+      programs on operating systems that doesn't support it. 
+      - Coroutines are components of a computer program that voluntarily release control to allow other routines to be run, and 
+      act as a form of multithreading where the scheduler is simplified to just start programs and give control to programs when 
+      requested.
+  
+  Q:  Which one of these do pthread_create() (C/POSIX), threading.Thread() (Python), go (Go) create?
+  A:  This obviously create a thread.
+  
+  Q:  How does pythons Global Interpreter Lock (GIL) influence the way a python Thread behaves?
+  A:  It acts as a bottle neck as it 
