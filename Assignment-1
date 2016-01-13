@@ -32,4 +32,12 @@ Task 3
   A:  This obviously create a thread.
   
   Q:  How does pythons Global Interpreter Lock (GIL) influence the way a python Thread behaves?
-  A:  It acts as a bottle neck as it 
+  A:  It acts as a bottle neck as it prevents multithreading for CPython. This is because CPython is not thread-safe. It enforce that
+      only one native thread is computed at a time.
+  
+  Q:  With this in mind: What is the workaround for the GIL (Hint: it's another module)?
+  A:  Python has a multithreading module that spawn multiple subprocesses such that each subprocess run their own native threads
+      and thus indirectly allow Python to multithread
+      
+  Q:  What does func GOMAXPROCS(n int) int change?
+  A:  It sets how many operating system threads the process is allowed to run on. 
