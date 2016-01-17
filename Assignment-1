@@ -41,3 +41,12 @@ Task 3
       
   Q:  What does func GOMAXPROCS(n int) int change?
   A:  It sets how many operating system threads the process is allowed to run on. 
+
+
+Task 4
+  When running the code, we observe that we get a non-deterministic output. This is because the different operations 
+  (adding and subtracting) take different amounts of computation time. The scheduler will allow one of the threads to
+  access the (shared) memory and start to manipulate the variables and then assign control to the other thread, resulting 
+  in both threads computing the same value, and thus resulting in the observed offset.
+  
+  
