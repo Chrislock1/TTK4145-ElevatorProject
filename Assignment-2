@@ -1,0 +1,21 @@
+Task 1
+  Q:  What is a atomic operation?
+  A:  A aparently undividable operation; practically happening without intervention from concurrent operations. If a operation
+      is atomic, you can guarantee that it's task is performed unintervened from other processes.
+  
+  Q:  What is a semaphore?
+  A:  A meta-state variable describing accessability to other state variables. If a non-atomic operation is manipulating a 
+      global variable, it is nescessary to first perform a (atomic) change to the semaphore, such that concurrent processes
+      are informed of the manipulation and don't create race-conditions.
+      
+  Q:  What is a mutex?
+  A:  A mutex is a variable responsible for allowing a process to run through it's critical section uninterrupted by other 
+      processes. It basically lock down an entire domain for that one thread until it's critical section is done. It also 
+      maintain priority-queue operations such that other processes are allowed access to the domain in a priority order.
+      
+  Q:  What is a critical section?
+  A:  The critical section of a operation is a set with non atomic operations needed to be executed uninterrupted by other 
+      concurrent operations. Foor loops is a example on this: if two for - loops is adressing the same variable, both needing
+      fetch - execute - store, we can see how both operations fetch the same value and simultaneously performing operations on
+      it, resulting in that only the operation whom store it's value last is the one who affected the variable. 
+      
