@@ -6,10 +6,12 @@ from threading import Thread
 
 i = 0
 def threadAdder():
+    global i
     for x in range(1000000):
 	i += 1
 
 def threadSubtractor():
+    global i
     for x in range(1000000):
 	i -= 1
 # Potentially useful thing:
